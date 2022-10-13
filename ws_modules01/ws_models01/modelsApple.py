@@ -4,6 +4,29 @@ from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKe
     Date
 from datetime import datetime
 
+class Apple_health_export(Base):
+    __tablename__ = 'apple_health_export'
+    id = Column(Integer,primary_key = True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    type = Column(Text)
+    sourceName = Column(Text)
+    sourceVersion = Column(Text)
+    unit = Column(Text)
+    creationDate = Column(Text)
+    startDate = Column(Text)
+    endDate = Column(Text)
+    value = Column(Text)
+    device = Column(Text)
+    MetadataEntry = Column(Text)
+    HeartRateVariabilityMetadataList = Column(Text)
+    time_stamp_utc = Column(DateTime, nullable = False, default = datetime.utcnow)
+
+    def __repr__(self):
+        return f'Apple_health_export(id: {self.id}, user_id: {self.user_id},' \
+            f'type: {self.type}, sourceName: {self.sourceName}, unit: {self.unit},' \
+            f'creationDate: {self.creationDate}, time_stamp_utc: {self.time_stamp_utc})'
+
+
 class Apple_health_steps(Base):
     __tablename__ = 'apple_health_steps'
     id = Column(Integer, primary_key = True)
