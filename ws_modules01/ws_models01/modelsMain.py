@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, inspect
 from sqlalchemy.orm import relationship, backref, sessionmaker
 from .modelsBase import Base, sess, engine
-from .modelsApple import Apple_health_steps
+from .modelsApple import Apple_health_steps, Apple_health_export
 from .modelsLocations import Locations, Weather_history, User_location_day
 from .modelsOura import Oura_token, Oura_sleep_descriptions
 from .modelsUsers import Users, Posts, Postshtml, Postshtmltagchars, User_notes
