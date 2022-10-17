@@ -2,10 +2,10 @@ import os
 import json
 
 if os.environ.get('COMPUTERNAME')=='CAPTAIN2020':
-    with open(r"C:\Users\captian2020\Documents\config_files\config_wsh20221006.json") as config_file:
+    with open(r"C:\Users\captian2020\Documents\config_files\config_ws20221016.json") as config_file:
         config = json.load(config_file)
 elif os.environ.get('COMPUTERNAME')=='NICKSURFACEPRO4':
-    with open(r"C:\Users\Costa Rica\Documents\_configs\config_wsh20221006.json") as config_file:
+    with open(r"C:\Users\Costa Rica\Documents\_configs\config_ws20221016.json") as config_file:
         config = json.load(config_file)
 else:
     with open(r"/home/ubuntu/config_ws20221014_ubuntu.json") as config_file:
@@ -39,6 +39,8 @@ class ConfigDev:
     VISUAL_CROSSING_BASE_URL = config.get('VISUAL_CROSSING_BASE_URL')
     #Blog
     WORD_DOC_DIR = config.get('WORD_DOC_DIR')
+    # APPLE Health
+    APPLE_HEALTH_DIR = config.get('APPLE_HEALTH_DIR')
 
 
 
@@ -70,3 +72,5 @@ class ConfigProd:
     VISUAL_CROSSING_BASE_URL = config.get('VISUAL_CROSSING_BASE_URL')
     #Blog
     WORD_DOC_DIR = config.get('WORD_DOC_DIR')
+    # APPLE Health
+    APPLE_HEALTH_DIR = config.get('APPLE_HEALTH_DIR')
