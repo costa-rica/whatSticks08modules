@@ -77,10 +77,5 @@ class Weather_history(Base):
     time_stamp_utc = Column(DateTime, nullable = False, default = datetime.utcnow)
 
     def __repr__(self):
-        return f"Weather_history(id: {self.id}, datetime: {self.datetime}, " \
+        return f"Weather_history(id: {self.id}, date_time: {self.date_time}, " \
             f"location_id: {self.location_id}, temp: {self.temp})"
-
-
-    
-
-
