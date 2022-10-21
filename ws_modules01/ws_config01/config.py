@@ -8,7 +8,7 @@ elif os.environ.get('COMPUTERNAME')=='NICKSURFACEPRO4':
     with open(r"C:\Users\Costa Rica\Documents\_configs\config_ws20221016.json") as config_file:
         config = json.load(config_file)
 else:
-    with open(r"/home/costarica//config_ws20221020_optiplex.json") as config_file:
+    with open(r"/home/nick/config_ws08_20221021_ubuntu.json") as config_file:
         config = json.load(config_file)
 
 
@@ -16,6 +16,7 @@ class ConfigDev:
     DEBUG = True
     SECRET_KEY = config.get('SECRET_KEY')
     SQL_URI = config.get('SQL_URI')
+    TEMPLATES_AUTO_RELOAD = True
 
     #Email stuff
     MAIL_SERVER = config.get('MAIL_SERVER_MSOFFICE')
