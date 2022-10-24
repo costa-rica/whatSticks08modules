@@ -17,6 +17,8 @@ class Users(Base, UserMixin):
     password = Column(Text, nullable = False)
     lat = Column(Float(precision=4, decimal_return_scale=None))
     lon = Column(Float(precision=4, decimal_return_scale=None))
+    share = Column(Text)
+    notes = Column(Text)
     oura_token_id = relationship("Oura_token", backref="oura_token_id", lazy=True)
     oura_sleep = relationship('Oura_sleep_descriptions', backref='oura_sleep', lazy=True)
     loc_day = relationship('User_location_day', backref='user_loc_day', lazy=True)
@@ -37,7 +39,7 @@ class Users(Base, UserMixin):
         return sess.query(Users).get(user_id)
 
     def __repr__(self):
-        return f'Users(id: {self.id}, email: {self.email})'
+        return f'Users(id: {self.id}, email: {self.email}, share: {self.share})'
 
 class Posts(Base):
     __tablename__ = 'posts'
