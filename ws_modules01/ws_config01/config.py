@@ -2,13 +2,13 @@ import os
 import json
 
 if os.environ.get('TERM_PROGRAM')=='Apple_Terminal':
-    with open('/Users/nick/Documents/_config_files/config_ws08_20221020.json') as config_file:
+    with open('/Users/nick/Documents/_config_files/config_ws08_20221031.json') as config_file:
         config = json.load(config_file)
 elif os.environ.get('COMPUTERNAME')=='NICKSURFACEPRO4':
     with open(r"C:\Users\Costa Rica\Documents\_configs\config_ws20221016.json") as config_file:
         config = json.load(config_file)
 else:
-    with open(r"/home/nick/config_ws08_20221021_ubuntu.json") as config_file:
+    with open(r"/home/nick/config_ws08_20221031_ubuntu.json") as config_file:
         config = json.load(config_file)
 
 
@@ -28,13 +28,15 @@ class ConfigDev:
     GUEST_EMAIL = config.get('GUEST_EMAIL')
     GUEST_PASSWORD = config.get('GUEST_PASSWORD')
     #WSH API
-    WSH_API_URL_BASE = config.get('WSH_API_URL_BASE')
+    # WSH_API_URL_BASE = config.get('WSH_API_URL_BASE')
+    WSH_API_URL_BASE = "http://localhost:5001"
     WSH_API_PASSWORD = config.get('WSH_API_PASSWORD')
     #Location
     WEATHER_API_KEY = config.get('WEATHER_API_KEY')
     WEATHER_API_URL_BASE = config.get('WEATHER_API_URL_BASE')
     #Oura
     OURA_API_URL_BASE = config.get('OURA_API_URL_BASE')
+
     #Visual crossing - weather history
     VISUAL_CROSSING_TOKEN = config.get('VISUAL_CROSSING_TOKEN')
     VISUAL_CROSSING_BASE_URL = config.get('VISUAL_CROSSING_BASE_URL')
@@ -42,7 +44,7 @@ class ConfigDev:
     WORD_DOC_DIR = config.get('WORD_DOC_DIR')
     # APPLE Health
     APPLE_HEALTH_DIR = config.get('APPLE_HEALTH_DIR')
-
+    APPLE_SUBPROCESS_DIR = config.get('APPLE_SUBPROCESS_DIR')
 
 
 class ConfigProd:
@@ -75,3 +77,4 @@ class ConfigProd:
     WORD_DOC_DIR = config.get('WORD_DOC_DIR')
     # APPLE Health
     APPLE_HEALTH_DIR = config.get('APPLE_HEALTH_DIR')
+    APPLE_SUBPROCESS_DIR = config.get('APPLE_SUBPROCESS_DIR')
