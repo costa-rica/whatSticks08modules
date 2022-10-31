@@ -30,6 +30,7 @@ class ConfigDev:
     #WSH API
     # WSH_API_URL_BASE = config.get('WSH_API_URL_BASE')
     WSH_API_URL_BASE = "http://localhost:5001"
+    WS_API_URL_BASE_DEV = config.get('WS_API_URL_BASE_DEV')
     WSH_API_PASSWORD = config.get('WSH_API_PASSWORD')
     #Location
     WEATHER_API_KEY = config.get('WEATHER_API_KEY')
@@ -64,6 +65,7 @@ class ConfigProd:
     GUEST_PASSWORD = config.get('GUEST_PASSWORD')
     #WSH API
     WSH_API_URL_BASE = config.get('WSH_API_URL_BASE')
+    WS_API_URL_BASE_DEV = config.get('WS_API_URL_BASE_DEV')
     WSH_API_PASSWORD = config.get('WSH_API_PASSWORD')
     #Location
     WEATHER_API_KEY = config.get('WEATHER_API_KEY')
