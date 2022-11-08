@@ -1,4 +1,4 @@
-from .modelsMain import login_manager, sess, engine, \
+from .modelsMain import login_manager, sess, engine, Base, \
     Users, Posts, Postshtml, Postshtmltagchars, User_notes, \
     Locations, Weather_history, \
     Oura_token, Oura_sleep_descriptions, User_location_day, \

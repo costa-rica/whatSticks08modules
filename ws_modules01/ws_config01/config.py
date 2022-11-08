@@ -2,13 +2,13 @@ import os
 import json
 
 if os.environ.get('TERM_PROGRAM')=='Apple_Terminal':
-    with open('/Users/nick/Documents/_config_files/config_ws08_20221101.json') as config_file:
+    with open('/Users/nick/Documents/_config_files/config_ws08_20221108.json') as config_file:
         config = json.load(config_file)
 elif os.environ.get('COMPUTERNAME')=='NICKSURFACEPRO4':
-    with open(r"C:\Users\Costa Rica\Documents\_configs\config_ws20221101.json") as config_file:
+    with open(r"C:\Users\Costa Rica\Documents\_configs\config_ws20221108.json") as config_file:
         config = json.load(config_file)
 else:
-    with open(r"/home/nick/config_ws08_20221101_ubuntu.json") as config_file:
+    with open(r"/home/nick/config_ws08_20221108_ubuntu.json") as config_file:
         config = json.load(config_file)
 
 
@@ -48,6 +48,8 @@ class ConfigDev:
     APPLE_SUBPROCESS_DIR = config.get('APPLE_SUBPROCESS_DIR')
     #DF for each data item
     DF_FILES_DIR = config.get('DF_FILES_DIR')
+    #Admin
+    DB_DOWNLOADS = config.get('DB_DOWNLOADS')
 
 
 class ConfigProd:
@@ -84,3 +86,5 @@ class ConfigProd:
     APPLE_SUBPROCESS_DIR = config.get('APPLE_SUBPROCESS_DIR')
     #DF for each data item
     DF_FILES_DIR = config.get('DF_FILES_DIR')
+    #Admin
+    DB_DOWNLOADS = config.get('DB_DOWNLOADS')
