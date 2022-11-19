@@ -2,13 +2,13 @@ import os
 import json
 
 if os.environ.get('TERM_PROGRAM')=='Apple_Terminal':
-    with open('/Users/nick/Documents/_config_files/config_ws08_20221108.json') as config_file:
+    with open('/Users/nick/Documents/_config_files/config_ws08_20221119.json') as config_file:
         config = json.load(config_file)
 elif os.environ.get('COMPUTERNAME')=='NICKSURFACEPRO4':
-    with open(r"C:\Users\Costa Rica\Documents\_configs\config_ws20221108.json") as config_file:
+    with open(r"C:\Users\Costa Rica\Documents\_configs\config_ws20221119.json") as config_file:
         config = json.load(config_file)
 else:
-    with open(r"/home/nick/config_ws08_20221108_ubuntu.json") as config_file:
+    with open(r"/home/nick/config_ws08_20221119_ubuntu.json") as config_file:
         config = json.load(config_file)
 
 
@@ -41,6 +41,7 @@ class ConfigDev:
     #Visual crossing - weather history
     VISUAL_CROSSING_TOKEN = config.get('VISUAL_CROSSING_TOKEN')
     VISUAL_CROSSING_BASE_URL = config.get('VISUAL_CROSSING_BASE_URL')
+    DAYS_HIST_LIMIT_STD = config.get('DAYS_HIST_LIMIT_STD')
     #Blog
     WORD_DOC_DIR = config.get('WORD_DOC_DIR')
     # APPLE Health
@@ -79,6 +80,7 @@ class ConfigProd:
     #Visual crossing - weather history
     VISUAL_CROSSING_TOKEN = config.get('VISUAL_CROSSING_TOKEN')
     VISUAL_CROSSING_BASE_URL = config.get('VISUAL_CROSSING_BASE_URL')
+    DAYS_HIST_LIMIT_STD = config.get('DAYS_HIST_LIMIT_STD')
     #Blog
     WORD_DOC_DIR = config.get('WORD_DOC_DIR')
     # APPLE Health
