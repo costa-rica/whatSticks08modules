@@ -1,1 +1,1 @@
-from .config import ConfigDev, ConfigProd
+from .config import ConfigBasic, ConfigLocal, ConfigDev, ConfigProd

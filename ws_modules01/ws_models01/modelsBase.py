@@ -4,11 +4,20 @@ from sqlalchemy import create_engine, inspect
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session, relationship
 # from datetime import datetime
-from ws_config01 import ConfigDev, ConfigProd
+from ws_config01 import ConfigDev, ConfigProd, ConfigLocal
 # import json
+import os
 
 
-config = ConfigDev()
+machine = os.uname()[1]
+
+match machine:
+    case 'Nicks-Mac-mini.lan' | 'NICKSURFACEPRO4':
+        config = ConfigLocal()
+    case 'devbig01':
+        config = ConfigDev()
+    case 'speedy100':
+        config = ConfigProd()
 
 Base = declarative_base()
 engine = create_engine(config.SQL_URI, echo = False, connect_args={"check_same_thread": False})

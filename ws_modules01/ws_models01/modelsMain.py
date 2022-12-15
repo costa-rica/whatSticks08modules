@@ -5,12 +5,21 @@ from .modelsApple import Apple_health_steps, Apple_health_export
 from .modelsLocations import Locations, Weather_history, User_location_day
 from .modelsOura import Oura_token, Oura_sleep_descriptions
 from .modelsUsers import Users, Posts, Postshtml, Postshtmltagchars, User_notes
-from ws_config01 import ConfigDev, ConfigProd
-
-config = ConfigDev()
-
-
+from ws_config01 import ConfigDev, ConfigProd, ConfigLocal
+import os
 from flask_login import LoginManager
+
+
+
+machine = os.uname()[1]
+
+match machine:
+    case 'Nicks-Mac-mini.lan' | 'NICKSURFACEPRO4':
+        config = ConfigLocal()
+    case 'devbig01':
+        config = ConfigDev()
+    case  'speedy100':
+        config = ConfigProd()
 
 login_manager= LoginManager()
 login_manager.login_view = 'users.login'
