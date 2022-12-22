@@ -9,17 +9,21 @@ from ws_config01 import ConfigDev, ConfigProd, ConfigLocal
 import os
 from flask_login import LoginManager
 
-
-
-machine = os.uname()[1]
-
-match machine:
-    case 'Nicks-Mac-mini.lan' | 'NICKSURFACEPRO4':
-        config = ConfigLocal()
-    case 'devbig01':
-        config = ConfigDev()
-    case  'speedy100':
-        config = ConfigProd()
+if os.environ.get('CONFIG_TYPE')=='local':
+    config = ConfigLocal()
+    print('* modelsMain: Development - Local')
+elif os.environ.get('CONFIG_TYPE')=='dev':
+    config = ConfigDev()
+    print('* modelsMain: Development')
+elif os.environ.get('CONFIG_TYPE')=='prod':
+    config = ConfigProd()
+    print('* modelsMain: Configured for Production')
+# if os.uname()[1] == 'Nicks-Mac-mini.lan' or os.uname()[1] == 'NICKSURFACEPRO4':
+#     config = ConfigLocal()
+# elif 'dev' in os.uname()[1]:
+#     config = ConfigDev()
+# elif 'prod' in os.uname()[1] or os.uname()[1] == 'speedy100':
+#     config = ConfigProd()
 
 login_manager= LoginManager()
 login_manager.login_view = 'users.login'

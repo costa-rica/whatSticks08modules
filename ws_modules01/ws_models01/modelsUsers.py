@@ -5,9 +5,24 @@ from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKe
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from datetime import datetime
 from flask_login import UserMixin
-from ws_config01 import ConfigDev, ConfigProd
+from ws_config01 import ConfigDev, ConfigProd, ConfigLocal
+import os
 
-config = ConfigDev()
+if os.environ.get('CONFIG_TYPE')=='local':
+    config = ConfigLocal()
+    # print('* modelsUsers: Development - Local')
+elif os.environ.get('CONFIG_TYPE')=='dev':
+    config = ConfigDev()
+    # print('* models: Development')
+elif os.environ.get('CONFIG_TYPE')=='prod':
+    config = ConfigProd()
+    # print('* modelsMain: Configured for Production')
+# if os.uname()[1] == 'Nicks-Mac-mini.lan' or os.uname()[1] == 'NICKSURFACEPRO4':
+#     config = ConfigLocal()
+# elif 'dev' in os.uname()[1]:
+#     config = ConfigDev()
+# elif 'prod' in os.uname()[1] or os.uname()[1] == 'speedy100':
+#     config = ConfigProd()
     
 
 class Users(Base, UserMixin):
