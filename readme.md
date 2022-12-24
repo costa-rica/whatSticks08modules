@@ -47,6 +47,7 @@ I will send a template (config_ws08.json) with everything preset. Here will be t
 1. WS_ROOT_LOCAL: where the project file is (i.e. parent dir of run.py)
 2. WS_ROOT_DB_LOCAL: location where database will be stored and other utility folders. Better not in app project folder. This will be what the SQL_URI reads
 
+Note you can change WS_ROOT and WS_ROOT_DB to the same thing it won't matter if you are just running it on your machine.
 
 <b><font size=4>Step 4</font></b>
 Make ws08web and ws08api virtual environments
@@ -66,18 +67,12 @@ pip install -r req_ws08web.txt
   Make sure "ws-modules01" is in pip list
 
 
-
 <b><font size=4>Step 6</font></b>
-Update .env inside whatSticks08modules/ws_modules01/ws_config01
-
-Important to do this before adding modules to venv. 
-
-<b><font size=4>Step 7</font></b>
 Make databases/ws08/ directory
 
-ws08 can be anywhere, but it goes inside where ever you set the WS_ROOT_DB in your config. I know 
+ws08 can be anywhere, but it goes inside where ever you set the WS_ROOT_DB_LOCAL in your config.
 
-<b><font size=4>Step 8</font></b>
+<b><font size=4>Step 7</font></b>
 Add appleHealthCatNames.txt in databases/ws08/apple_health/
 
 appleHealthCatNames.txt
@@ -108,6 +103,8 @@ CONFIG_TYPE='local'
 
 ## What my file structure looks like on dev machine
 
+This might be best for you if you want to make one directory to keep everything. The database gets big quickly with apple health data so if you want to put that somewhere else no problem just make sure the config.json file has the right WS_ROOT_DB
+
 ```
 .
 ├── applications
@@ -132,37 +129,4 @@ CONFIG_TYPE='local'
     ├── scheduler
     └── web
 
-```
-
-
-## What my file structure looks like locally
-```
-.
-
-├── _config_files
-│   └── config_ws08_20221222.json
-├── _databases
-│   └──  ws08
-│        ├── apple_health
-│        │       └── appleHealthCatNames.txt (need to add manually)
-│        ├── db_downloads
-│        ├── df_files
-│        ├── word_docs
-│        └── ws08.db
-├── _environments
-│   ├── req_ws08api.txt
-│   ├── req_ws08web.txt
-│   ├── ws08api [Your venv]
-│   ├── ws07sched [Your venv]
-│   └── ws08web [Your venv]
-├── whatSticks08
-│    ├── api
-│    ├── apple_service
-│    ├── scheduler
-│    └── web
-├── whatSticks08modules
-│   ├── readme.md
-│   ├── req_ws08api.txt
-│   ├── req_ws08web.txt
-│   └── ws_modules01
 ```
