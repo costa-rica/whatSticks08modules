@@ -14,10 +14,12 @@ MarkupSafe==2.1.1
 numpy==1.23.4
 pandas==1.5.1
 python-dateutil==2.8.2
+python-dotenv==0.21.0
 pytz==2022.5
 requests==2.28.1
 six==1.16.0
 SQLAlchemy==1.4.41
 urllib3==1.26.12
 Werkzeug==2.2.2
+-e git+https://github.com/costa-rica/whatSticks08modules.git@67a10879742195c391146223cffd0393676b39b6#egg=ws_modules01&subdirectory=ws_modules01
 xmltodict==0.13.0
