@@ -103,5 +103,5 @@ webencodings==0.5.1
 websocket-client==1.4.1
 Werkzeug==2.2.2
 widgetsnbextension==4.0.3
--e git+https://github.com/costa-rica/whatSticks08modules.git@4be85d80d0816da613c8d905ade22755b9039f7f#egg=ws_modules01&subdirectory=ws_modules01
+-e git+https://github.com/costa-rica/whatSticks08modules.git#egg=ws_modules01&subdirectory=ws_modules01
 xmltodict==0.13.0

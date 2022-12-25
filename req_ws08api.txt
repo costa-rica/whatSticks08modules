@@ -21,5 +21,5 @@ six==1.16.0
 SQLAlchemy==1.4.41
 urllib3==1.26.12
 Werkzeug==2.2.2
--e git+https://github.com/costa-rica/whatSticks08modules.git@67a10879742195c391146223cffd0393676b39b6#egg=ws_modules01&subdirectory=ws_modules01
+-e git+https://github.com/costa-rica/whatSticks08modules.git#egg=ws_modules01&subdirectory=ws_modules01
 xmltodict==0.13.0

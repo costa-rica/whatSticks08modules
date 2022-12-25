@@ -43,7 +43,8 @@ Session = sessionmaker(bind = engine)
 sess = Session()
 
 #Build db
-if 'users' in inspect(engine).get_table_names():
+# if 'users' in inspect(engine).get_table_names():
+if os.path.exists(os.path.join(config.WS_ROOT_DB,'ws08.db')):
     print('db already exists')
 else:
     Base.metadata.create_all(engine)
