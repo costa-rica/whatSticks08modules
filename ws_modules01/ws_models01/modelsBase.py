@@ -17,33 +17,34 @@ elif os.environ.get('CONFIG_TYPE')=='dev':
 elif os.environ.get('CONFIG_TYPE')=='prod':
     config = ConfigProd()
     print('* modelsBase: Configured for Production')
-# print('Are we in modelsBase?')
-# if os.uname()[1] == 'Nicks-Mac-mini.lan' or os.uname()[1] == 'NICKSURFACEPRO4':
-#     print('--- CASE thingy should fire ---')
-#     config = ConfigLocal()
-# elif 'dev' in os.uname()[1]:
-#     print('** This should fire ****')
-#     config = ConfigDev()
-# elif 'prod' in os.uname()[1] or os.uname()[1] == 'speedy100':
-#     config = ConfigProd()
-# machine = os.uname()[1]
 
-# match machine:
-#     case 'Nicks-Mac-mini.lan' | 'NICKSURFACEPRO4':
-#         config = ConfigLocal()
-#     case 'devbig01':
-#         config = ConfigDev()
-#     case 'speedy100':
-#         config = ConfigProd()
+########################################################
+## Check/make key directories here becuase
+## This is one of the first files to fire
+if not os.path.exists(os.path.join(config.WS_ROOT_DB)):
+    os.makedirs(os.path.join(config.WS_ROOT_DB))
+
+if not os.path.exists(os.path.join(config.DB_DOWNLOADS)):
+    os.makedirs(os.path.join(config.DB_DOWNLOADS))
+
+if not os.path.exists(os.path.join(config.DF_FILES_DIR)):
+    os.makedirs(os.path.join(config.DF_FILES_DIR))
+
+if not os.path.exists(os.path.join(config.WORD_DOC_DIR)):
+    os.makedirs(os.path.join(config.WORD_DOC_DIR))
+
+if not os.path.exists(os.path.join(config.APPLE_HEALTH_DIR)):
+    os.makedirs(os.path.join(config.APPLE_HEALTH_DIR))
+##########################################################
 
 Base = declarative_base()
 engine = create_engine(config.SQL_URI, echo = False, connect_args={"check_same_thread": False})
 Session = sessionmaker(bind = engine)
 sess = Session()
 
-# #Build db
-# if 'users' in inspect(engine).get_table_names():
-#     print('db already exists')
-# else:
-#     Base.metadata.create_all(engine)
-#     print('NEW db created.')
+#Build db
+if 'users' in inspect(engine).get_table_names():
+    print('db already exists')
+else:
+    Base.metadata.create_all(engine)
+    print('NEW db created.')

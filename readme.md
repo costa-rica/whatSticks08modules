@@ -67,12 +67,8 @@ pip install -r req_ws08web.txt
   Make sure "ws-modules01" is in pip list
 
 
+
 <b><font size=4>Step 6</font></b>
-Make databases/ws08/ directory
-
-ws08 can be anywhere, but it goes inside where ever you set the WS_ROOT_DB_LOCAL in your config.
-
-<b><font size=4>Step 7</font></b>
 Add appleHealthCatNames.txt in databases/ws08/apple_health/
 
 appleHealthCatNames.txt
