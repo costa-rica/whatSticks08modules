@@ -41,6 +41,9 @@ class ConfigBasic:
     VISUAL_CROSSING_BASE_URL = config.get('VISUAL_CROSSING_BASE_URL')
     DAYS_HIST_LIMIT_STD = 30
 
+    #APPLE_HEALTH
+    APPLE_HEALTH_CAT_NAMES = config.get('APPLE_HEALTH_CAT_NAMES')
+
     
 
 

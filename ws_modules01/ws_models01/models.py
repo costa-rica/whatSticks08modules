@@ -7,3 +7,7 @@ from datetime import datetime
 from ws_config01 import ConfigDev, ConfigProd, ConfigLocal
 from flask_login import UserMixin, LoginManager
 import json
+import os
+
+
+print('******* -- ws_models01 models.py --')

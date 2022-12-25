@@ -27,5 +27,3 @@ def load_user(any_name_for_id_obj):# any_name_for_id_obj can be any name because
     # This is probably created somewhere inside flask_login when the user gets logged in. But i've not been able to track it.
     return sess.query(Users).filter_by(id = any_name_for_id_obj).first()
 
-
-

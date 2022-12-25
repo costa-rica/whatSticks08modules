@@ -32,7 +32,7 @@ Found in whatSticks08modules/ws_modules01/ws_config01/ directory.
 .env [what it will probably look like]
 ```
 CONFIG_PATH="/Users/nick/Documents/_config_files"
-CONFIG_FILE_NAME="config_ws08_20221222.json"
+CONFIG_FILE_NAME="config_ws08_20221225.json"
 CONFIG_TYPE='local'
 ```
 - CONFIG_PATH: enter path to the config file I will send you. This goes anywhere your local computer.
@@ -67,16 +67,6 @@ pip install -r req_ws08web.txt
   Make sure "ws-modules01" is in pip list
 
 
-
-<b><font size=4>Step 6</font></b>
-Add appleHealthCatNames.txt in databases/ws08/apple_health/
-
-appleHealthCatNames.txt
-```
-HKCategoryTypeIdentifier
-HKDataType
-HKQuantityTypeIdentifier
-```
 #
 ## More install info in case it helps
 
@@ -107,11 +97,9 @@ This might be best for you if you want to make one directory to keep everything.
 │   ├── api
 │   ├── apple_service
 │   └── web
-├── config_ws08_20221222.json
+├── config_ws08_20221225.json
 ├── databases
 │   └── ws08
-│       ├── apple_health
-│       │       └── appleHealthCatNames.txt [need to add manually]
 │       ├── db_downloads
 │       ├── df_files
 │       └── ws08.db
