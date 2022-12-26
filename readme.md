@@ -7,9 +7,10 @@ https://what-sticks.com
 #
 ## Description
 - This repo contains the config and database models for the whatSticks08 applications. In order to run whatSticks08 on your machine you'll need to add this module to your venv.
-- Some hard coding is necessary in .env and config_ws08.json
-- I will provide config_ws08.json
-- Github repository for whatSticks08 found [here](https://github.com/costa-rica/whatSticks08)
+  - Github repository for whatSticks08 found [here](https://github.com/costa-rica/whatSticks08)
+- Some hard coding is necessary in .env
+- config.json - I have a version that I can share to make things easier.
+
 
 #
 ## Installation
@@ -22,7 +23,6 @@ git clone https://github.com/costa-rica/whatSticks08modules.git
 <b><font size=4>Step 2</font></b>
 Edit .env 
 
-
 Found in whatSticks08modules/ws_modules01/ws_config01/ directory.
 
 .env 
@@ -34,6 +34,7 @@ CONFIG_PATH="/Users/nick/Documents/_config"
 CONFIG_FILE_NAME="config_ws08_20221226.json"
 CONFIG_TYPE='local'
 ```
+Change your .env to:
 - WS_ROOT: root of project folder
 - WS_ROOT_DB: root of project folder
 - CONFIG_PATH: enter path to the config file I will send you. This goes anywhere your local computer.
