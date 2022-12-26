@@ -11,61 +11,61 @@ with open(os.path.join(os.environ.get('CONFIG_PATH'), os.environ.get('CONFIG_FIL
 
 class ConfigBasic():
 
-    SECRET_KEY = config.get('SECRET_KEY')
-    BASIC_CONFIG_KEY = "This Key"
+    def __init__(self):
+        self.SECRET_KEY = config.get('SECRET_KEY')
 
-    #Email stuff
-    MAIL_SERVER = config.get('MAIL_SERVER_MSOFFICE')
-    MAIL_PORT = config.get('MAIL_PORT')
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = config.get('EMAIL')
-    MAIL_PASSWORD = config.get('EMAIL_PASSWORD')
-    #web Guest
-    GUEST_EMAIL = config.get('GUEST_EMAIL')
-    GUEST_PASSWORD = config.get('GUEST_PASSWORD')
+        #Email stuff
+        self.MAIL_SERVER = config.get('MAIL_SERVER_MSOFFICE')
+        self.MAIL_PORT = config.get('MAIL_PORT')
+        self.MAIL_USE_TLS = True
+        self.MAIL_USERNAME = config.get('EMAIL')
+        self.MAIL_PASSWORD = config.get('EMAIL_PASSWORD')
+        #web Guest
+        self.GUEST_EMAIL = config.get('GUEST_EMAIL')
+        self.GUEST_PASSWORD = config.get('GUEST_PASSWORD')
 
-    WSH_API_PASSWORD = config.get('WSH_API_PASSWORD')
+        self.WSH_API_PASSWORD = config.get('WSH_API_PASSWORD')
 
-    #Location
-    LOCATION_API_KEY = config.get('LOCATION_API_KEY')
-    LOCATION_API_URL_BASE = config.get('LOCATION_API_URL_BASE')
+        #Location
+        self.LOCATION_API_KEY = config.get('LOCATION_API_KEY')
+        self.LOCATION_API_URL_BASE = config.get('LOCATION_API_URL_BASE')
 
-    #Oura
-    OURA_API_URL_BASE = config.get('OURA_API_URL_BASE')
-    
-    #Visual crossing - weather history
-    VISUAL_CROSSING_TOKEN = config.get('VISUAL_CROSSING_TOKEN')
-    VISUAL_CROSSING_BASE_URL = config.get('VISUAL_CROSSING_BASE_URL')
-    DAYS_HIST_LIMIT_STD = 30
+        #Oura
+        self.OURA_API_URL_BASE = config.get('OURA_API_URL_BASE')
+        
+        #Visual crossing - weather history
+        self.VISUAL_CROSSING_TOKEN = config.get('VISUAL_CROSSING_TOKEN')
+        self.VISUAL_CROSSING_BASE_URL = config.get('VISUAL_CROSSING_BASE_URL')
+        self.DAYS_HIST_LIMIT_STD = 30
 
-    #APPLE_HEALTH
-    APPLE_HEALTH_CAT_NAMES = config.get('APPLE_HEALTH_CAT_NAMES')
+        #APPLE_HEALTH
+        self.APPLE_HEALTH_CAT_NAMES = config.get('APPLE_HEALTH_CAT_NAMES')
 
-    ############################################
-    # Directory Paths
-    WS_ROOT = os.environ.get('WS_ROOT')
-    WS_ROOT_DB = os.environ.get('WS_ROOT_DB')
+        ############################################
+        # Directory Paths
+        self.WS_ROOT = os.environ.get('WS_ROOT')
+        self.WS_ROOT_DB = os.environ.get('WS_ROOT_DB')
 
-    #### Previously in child config classes ####
-    # DB references 
-    SQL_URI = f"sqlite:///{WS_ROOT_DB}ws08.db"
+        #### Previously in child config classes ####
+        # DB references 
+        self.SQL_URI = f"sqlite:///{self.WS_ROOT_DB}ws08.db"
 
-    #Blog
-    WORD_DOC_DIR = f"{WS_ROOT_DB}word_docs"
+        #Blog
+        self.WORD_DOC_DIR = f"{self.WS_ROOT_DB}word_docs"
 
-    #DF for each data item
-    DF_FILES_DIR = f"{WS_ROOT_DB}df_files"
+        #DF for each data item
+        self.DF_FILES_DIR = f"{self.WS_ROOT_DB}df_files"
 
-    #Admin
-    DB_DOWNLOADS = f"{WS_ROOT_DB}db_downloads"
-    #Apple health
-    APPLE_HEALTH_DIR = f"{WS_ROOT_DB}apple_health"
+        #Admin
+        self.DB_DOWNLOADS = f"{self.WS_ROOT_DB}db_downloads"
+        #Apple health
+        self.APPLE_HEALTH_DIR = f"{self.WS_ROOT_DB}apple_health"
 
-    #### Sub project directories ###
-    APPLE_SUBPROCESS_DIR = f"{WS_ROOT}apple_service"
-    SCHED_LOGS_DIR = f"{WS_ROOT}scheduler/"
-    WEB_LOGS_DIR = f"{WS_ROOT}web/logs"
-    API_LOGS_DIR = f"{WS_ROOT}api/logs"
+        #### Sub project directories ###
+        self.APPLE_SUBPROCESS_DIR = f"{self.WS_ROOT}apple_service"
+        self.SCHED_LOGS_DIR = f"{self.WS_ROOT}scheduler/"
+        self.WEB_LOGS_DIR = f"{self.WS_ROOT}web/logs"
+        self.API_LOGS_DIR = f"{self.WS_ROOT}api/logs"
 
 
 class ConfigLocal(ConfigBasic):
