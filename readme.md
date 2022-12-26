@@ -57,7 +57,7 @@ pip install -r req_ws08web.txt
 
 * Note: req_ws08web.txt files use the ws-modules01 from git not the one you've just downloaded. To use the .env file you just endited in step 2, you'll need to either:
 
-   - reinstall ws_modules01 with the one you've cloned and edited the .env by navigating into whatSticks08modules/ws_modules01/ws_config01/ 
+   - reinstall ws_modules01 with the one you've cloned (and edited the .env) by navigating into whatSticks08modules/ws_modules01/ws_config01/ 
 
          pip install -e .
 
